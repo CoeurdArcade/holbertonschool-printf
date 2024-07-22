@@ -1,36 +1,28 @@
-C - PRINTF GROUP PROJECT
+# - PRINTF GROUP PROJECT
 
-Building this project recquires with teammates recquires to have primary workflows like:
+  https://share.icloud.com/photos/0dcL1iMfo8PQQVrSCj_xCm8CQ
+  
+Description 
 
-Approaching a project, group projects, how to pair programming, flowcharts
+_printf is a simplified version of the standard library function printf in C. It's designed to be lightweight and easy to understand, making it ideal for educational purposes or for use in simple embedded systems.
 
-CONTEXT
+Here are some of its key features:
 
-Build a printf function
+Prints strings and characters to stdout: _printf allows you to print strings and characters to the standard output, which is usually the console or terminal.
 
-Use man to have documentation
+Supports basic format specifiers: It supports the basic format specifiers that are commonly used in C programming. These include %c for characters, %s for strings, %d and %i for integers, and %% for printing the '%' character itself.
 
-A readme file at the root folder of the project
+Easy integration: _printf can be easily integrated into any C project. You just need to include the header file and the source file in your project, and you're good to go.
 
-Betty style code
+Demonstrates the use of variadic functions and parsing format specifiers: One of the main educational benefits of _printf is that it demonstrates how to use variadic functions in C. These are functions that take a variable number of arguments. It also shows how to parse format specifiers, which are the placeholders in the format string that tell the function what type of data to expect.
 
-Not allowed to use global variables
+# Mon Projet
 
-No more than 5 functions per file
+Ceci est un exemple de projet qui utilise la fonction `printf` en C.
 
-No use of main.c
+## Installation
 
-The prototypes of all the functions should be included in the header file called main.h
+Pour exécuter ce projet, vous aurez besoin d'un compilateur C. Voici comment installer le compilateur GCC sur Ubuntu :
 
-All the header files should be include guarded
-
-Build a putchar function for the project
-
-AUTHORIZED FUNCTIONS AND MACROS
-
-write malloc free va_start va_end va_copy va_arg
-
-TASKS
-
-Write a function that produces output according to a format prototype: int _ printf(const char * format, ...) Returns the number of characters printed (excluding the null byte used to end output to strings) Write output to stdout, the standard output stream Format is a character string. The format string is composed of zero or more directives. You need to handle the following conversion specifiers: c, s, % You don't have to reproduce the buffer handling of the C library printf function You don't have to handle the flag characters You don't have to handle field width You don't have to handle precision You don't have to handle the length modifiers
-
+```bash
+sudo apt-get install gcc
