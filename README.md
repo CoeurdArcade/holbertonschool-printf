@@ -22,3 +22,30 @@ To run this project, you'll need a C compiler. Here's how to install the GCC com
 
 ```bash
 sudo apt-get install gcc
+ 
+To use this project in your own code, follow these steps:
+
+Download _printf: You can download the _printf source code from the GitHub repository using one of the following methods:
+
+Clone the repository: If you have Git installed on your computer, you can clone the repository using the following command:
+
+git clone https://github.com/evrade10/holbertonschool-printf.git
+
+Downloading the source code: If you don't want to clone the repository, you can download the source code as a ZIP file by clicking on the "Code" button on the repository page and selecting "Download ZIP".
+
+include _printf in your project: Once you have downloaded the source code, you need to add the following files to your project:
+
+_printf.c : The source file containing the implementation of the _printf function.
+
+main.h: The header file containing the declaration of the _printf function.
+
+_char.c, _int.c, _string.c, itoa.c : The source files containing the helper functions used by _printf.
+
+Compile your project: Once you have added the necessary files to your project, you can use the _printf function in your code. To do this, you need to include the main.h header file in your source files where you want to use the _printf function.
+
+#include "main.h"
+
+You can then compile your project using your favourite C compiler. For example, if you use GCC, you can use the following command:
+
+gcc myprogram.c _char.c _int.c _string.c itoa.c _printf.c -o myprogram
+
