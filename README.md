@@ -1,6 +1,6 @@
 # - PRINTF GROUP PROJECT
 
-  https://share.icloud.com/photos/0dcL1iMfo8PQQVrSCj_xCm8CQ
+  ![image](https://github.com/nostop10/holbertonschool-simple_shell/assets/159030413/250e230b-93e3-481a-be32-76d1b2266363)
   
 Description 
 
@@ -14,15 +14,11 @@ Supports basic format specifiers: It supports the basic format specifiers that a
 
 Easy integration: _printf can be easily integrated into any C project. You just need to include the header file and the source file in your project, and you're good to go.
 
-Demonstrates the use of variadic functions and parsing format specifiers: One of the main educational benefits of _printf is that it demonstrates how to use variadic functions in C. These are functions that take a variable number of arguments. It also shows how to parse format specifiers, which are the placeholders in the format string that tell the function what type of data to expect.
-
-# Mon Projet
-
-Ceci est un exemple de projet qui utilise la fonction `printf` en C.
+Demonstrates the use of variadic functions and parsing format specifiers: One of the main educational benefits of _printf is that it demonstrates how to use variadic functions in C. These are functions that take a variable number of arguments. It also shows how to parse format specifiers, which are the placeholders in the format string that tell the function what type of data to expect
 
 ## Installation
 
-Pour exécuter ce projet, vous aurez besoin d'un compilateur C. Voici comment installer le compilateur GCC sur Ubuntu :
+To run this project, you'll need a C compiler. Here's how to install the GCC compiler on Ubuntu :
 
 ```bash
 sudo apt-get install gcc
