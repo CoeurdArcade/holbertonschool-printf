@@ -36,8 +36,8 @@ Write a function that produces output according to a format prototype: int _ pri
 
 # - PRINTF GROUP PROJECT
 
-  ![image](https://github.com/nostop10/holbertonschool-simple_shell/assets/159030413/250e230b-93e3-481a-be32-76d1b2266363)
-  
+![image](https://github.com/nostop10/holbertonschool-simple_shell/assets/159030413/250e230b-93e3-481a-be32-76d1b2266363)
+
 Description 
 
 _printf is a simplified version of the standard library function printf in C. It's designed to be lightweight and easy to understand, making it ideal for educational purposes or for use in simple embedded systems.
@@ -58,7 +58,7 @@ To run this project, you'll need a C compiler. Here's how to install the GCC com
 
 ```bash
 sudo apt-get install gcc
- 
+
 To use this project in your own code, follow these steps:
 
 Download _printf: You can download the _printf source code from the GitHub repository using one of the following methods:
