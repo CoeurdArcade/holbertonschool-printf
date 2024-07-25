@@ -8,20 +8,22 @@
  *
  * Return: The length of the string, or negative one (-1) if the input is NULL.
  */
+
 int _strlen(char *str)
 {
-    if (str == NULL) {
-        return -1;
-    }
+	if (str == NULL)
+	{
+	return -1;
+	}
 
-    int i;
+	int i;
 
-    for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 	continue;
 	}	
 
-    return i;
+	return i;
 }
 
 /**
@@ -30,18 +32,20 @@ int _strlen(char *str)
  *
  * Return: The length of the string, or negative one (-1) if the input is NULL.
  */
+
 int _strlenc(const char *str)
 {
-    if (str == NULL) {
-        return -1;
-    }
+	if (str == NULL)
+	{
+	return -1;
+	}
 
-    int i;
+	int i;
 
-    for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 	continue;
 	}
 
-    return i;
+	return i;
 }
