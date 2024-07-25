@@ -22,8 +22,3 @@ int _printf(const char *format, ...) {
 
 	return result;
 }
-
-int main() {
-	_printf("Hello, world! The current year is %d.\n", 2023);
-	return 0;
-}
