@@ -16,23 +16,23 @@
 
 int is_string(const char *str)
 {
-/**
- * iterate through each character in the string
- */
+	/**
+	 * iterate through each character in the string
+	 */
 	for (; *str != '\0'; str++)
 	{
-/**
- * check if any non-printable characters are present
- */
-	if (!isprint(*str))
-	{
-	return 0;
-	}
+		/**
+		 * check if any non-printable characters are present
+		 */
+		if (!isprint(*str))
+		{
+			return 0;
+		}
 	}
 
-/**
- * if all characters are printable, the argument is a string
- */
+	/**
+	 * if all characters are printable, the argument is a string
+	 */
 	return 1;
 }
 int printf_string(va_list val)
@@ -43,21 +43,21 @@ int printf_string(va_list val)
 	str = va_arg(val, char *);
 	if (str == NULL)
 	{
-	str = "(null)";
+		str = "(null)";
 	}
 
-/**
- * check if the argument is a string
- */
+	/**
+	 * check if the argument is a string
+	 */
 	if (!is_string(str))
 	{
-	return -1;
+		return -1;
 	}
 
 	length = _strlen(str);
 	for (i = 0; i < length; i++)
 	{
-	_putchar(str[i]);
+		_putchar(str[i]);
 	}
 	return (length);
 }
