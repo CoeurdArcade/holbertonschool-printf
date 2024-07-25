@@ -12,8 +12,8 @@ typedef struct specfunc
 {
 	char *flag;
 	int (*func)(va_list, int);
-}
-SF;
+} SF;
+
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _string(va_list, int);
