@@ -15,12 +15,12 @@ int _strlen(char *str)
 
 	if (str == NULL)
 	{
-	return -1;
+		return -1;
 	}
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-	continue;
+		continue;
 	}	
 
 	return i;
@@ -39,12 +39,12 @@ int _strlenc(const char *str)
 
 	if (str == NULL)
 	{
-	return -1;
+		return -1;
 	}
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-	continue;
+		continue;
 	}
 
 	return i;
