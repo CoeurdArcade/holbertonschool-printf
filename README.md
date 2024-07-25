@@ -1,4 +1,4 @@
-C - PRINTF GROUP PROJECT !!!
+GROUP PROJECT !!!
 
 Building this project recquires with teammates recquires to have primary workflows like:
 
