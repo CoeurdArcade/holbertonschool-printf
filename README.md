@@ -1,6 +1,6 @@
 # - PRINTF GROUP PROJECT
 
-  ![image](https://github.com/nostop10/holbertonschool-simple_shell/assets/159030413/250e230b-93e3-481a-be32-76d1b2266363)
+  0020246962e845a9a6fd5a9618657d19.png~tplv-6bxrjdptv7-image.png
   
 Description 
 
