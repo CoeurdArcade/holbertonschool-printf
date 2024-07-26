@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -13,6 +14,7 @@ char *convert_binary(int n)
 	int neg = 0;
 	size_t len = 1;
 	char *str;
+	size_t i;
 
 	if (n < 0)
 	{
@@ -42,14 +44,14 @@ char *convert_binary(int n)
 	}
 
 	/* convert to binary and store in the string */
-	for (size_t i = 0; i < len/2; i++)
+	for (i = 0; i < len / 2; i++)
 	{
-		char tmp = str[(len - 1)/2 + neg - i];
+		char tmp = str[(len - 1) / 2 + neg - i];
 		str[i] = str[len - i - 1 + neg];
-		str[(len - 1)/2 + neg - i] = tmp;
+		str[(len - 1) / 2 + neg - i] = tmp;
 	}
 
-	for (size_t i = len/2; i < len; i++)
+	for (i = len / 2; i < len; i++)
 	{
 		str[i] = n % 2 ? '1' : '0';
 		n /= 2;
