@@ -14,6 +14,10 @@ typedef struct specfunc
 	int (*func)(va_list, int);
 } SF;
 
+int is_string(const char *str);
+int printf_string(va_list val);
+size_t_strlen(const char *s);
+int _putchar(int c);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _string(va_list, int);
