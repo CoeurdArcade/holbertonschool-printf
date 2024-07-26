@@ -8,7 +8,7 @@
  * @str: string to reverse
  * it has to be allocated on memory before
  *
- * Return: reverse result
+ * Return: reverse result or NULL on failure
  */
 
 char *reverse(char *str)
@@ -17,12 +17,12 @@ char *reverse(char *str)
 	char *rev;
 	size_t i;
 
-	rev = malloc((strlen(str) + 1) * sizeof(char));
+	rev = malloc((len + 1) * sizeof(char));
 
 	if (!rev)
 	{
 		perror("malloc failed");
-		exit(EXIT_FAILURE);
+		return NULL;
 	}
 
 	for (i = 0; i < len; i++)
