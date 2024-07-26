@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -13,7 +14,10 @@
 char *reverse(char *str)
 {
 	size_t len = _strlen(str);
-	char *rev = malloc((strlen(str) + 1) * sizeof(char));
+	char *rev;
+	size_t i;
+
+	rev = malloc((strlen(str) + 1) * sizeof(char));
 
 	if (!rev)
 	{
@@ -21,7 +25,6 @@ char *reverse(char *str)
 		exit(EXIT_FAILURE);
 	}
 
-	size_t i;
 	for (i = 0; i < len; i++)
 	{
 		rev[i] = str[len - i - 1];
