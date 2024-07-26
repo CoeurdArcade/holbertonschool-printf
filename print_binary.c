@@ -11,29 +11,34 @@
 
 char *convert_binary(int n)
 {
-	int i;
+	int neg = 0;
+	size_t len = 1;
 	char *str;
-
-	str = malloc(33 * sizeof(char));
-	if (!str)
-	{
-		perror("malloc failed");
-		exit(EXIT_FAILURE);
-	}
+	size_t i;
 
 	/* handle negative numbers */
 	if (n < 0)
 	{
+		neg = 1;
 		n = ~n + 1;
 	}
 
-	/* convert to binary and store in the string */
-	for (i = 31; i >= 0; i--)
+	for (len = 1; n > 1; len++)
 	{
-		str[31 - i] = (n & (1 << i)) ? '1' : '0';
+		perror("malloc failed");
+		exit(EXIT_FAILURE);
+	}
+	/* convert to binary and store in the string */
+	str[len + neg] = '\0';
+	for (i = 0; i < len; i++)
+	{
+		str[len - i - 1 + neg] = (n & (1 << i)) ? '1' : '0';
 	}
 
-	str[32] = '\0';
+	if (neg)
+	{
+		str[0] = '-';
+	}
 
 	return str;
 }
