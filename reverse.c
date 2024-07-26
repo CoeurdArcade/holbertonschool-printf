@@ -23,7 +23,8 @@ char *reverse(char *str)
 
 	len = _strlen(str);
 
-	for (size_t i = 0; i < len; i++)
+	size_t i;
+	for (i = 0; i < len; i++)
 	{
 		rev[i] = str[len - i - 1];
 	}
