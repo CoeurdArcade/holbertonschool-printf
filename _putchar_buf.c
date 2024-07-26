@@ -30,5 +30,5 @@ int _putchar_buf(char *buf, size_t len)
 
 int _putchar(char c)
 {
-	return _putchar_buf(&c, 1);
+	return write(1, &c, 1);
 }
