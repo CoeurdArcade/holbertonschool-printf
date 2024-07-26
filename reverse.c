@@ -1,26 +1,26 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
  * reverse - a function that reverses a string
  * @str: string to reverse
+ * it has to be allocated on memory before
  *
- * Return: reverse result, or NULL if input is invalid
+ * Return: reverse result
  */
 
 char *reverse(char *str)
 {
-	if (str == NULL || *str == '\0')
-	{
-		return NULL;
-	}
+	size_t len;
+	char *rev = malloc((strlen(str) + 1) * sizeof(char));
 
-	size_t len = _strlen(str);
-	char *rev = malloc((len + 1) * sizeof(char));
 	if (!rev)
 	{
 		perror("malloc failed");
 		exit(EXIT_FAILURE);
 	}
+
+	len = _strlen(str);
 
 	for (size_t i = 0; i < len; i++)
 	{
