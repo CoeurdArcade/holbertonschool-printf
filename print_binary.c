@@ -34,7 +34,7 @@ char *convert_binary(int n)
 	}
 
 	/* handle negative numbers */
-	str[neg] = '0'+ neg;
+	str[0] = '0'+ neg;
 	if (neg)
 	{
 		str[1] = "1";
