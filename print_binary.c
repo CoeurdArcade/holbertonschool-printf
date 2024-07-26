@@ -25,6 +25,12 @@ char *convert_binary(int n)
 
 	for (len = 1; n > 1; len++)
 	{
+		n /= 2;
+	}
+
+	str = malloc((len + neg + 1) * sizeof(char));
+	if (!str)
+	{
 		perror("malloc failed");
 		exit(EXIT_FAILURE);
 	}
