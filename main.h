@@ -13,10 +13,11 @@ typedef struct specfunc
 	char *flag;
 	int (*func)(va_list, int);
 } SF;
-
+int print_s(va_list args);
+int _putchar_buf(const char *buf, size_t len)
 int is_string(const char *str);
 int printf_string(va_list val);
-size_t_strlen(const char *s);
+extern size_t_strlen(const char *s);
 int _putchar(int c);
 int _printf(const char *format, ...);
 int _putchar(char c);
@@ -30,4 +31,5 @@ char *convert_binary(int);
 int _strlen(char *str);
 int _strlenc(const char *str);
 int print_37(void);
+
 #endif
