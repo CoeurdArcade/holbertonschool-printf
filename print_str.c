@@ -14,8 +14,7 @@ int _strlenc(const char *str)
 	int i;
 
 	if (str == NULL)
-
-	return -1;
+		return -1;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
