@@ -22,3 +22,21 @@ int _putchar(char c)
 
 	return 1;
 }
+
+/**
+ * main - Tests the functionality of _putchar function
+ *
+ * Return: Always 0 on success
+ */
+
+int main(void)
+{
+	char c = 'a';
+
+	if (_putchar(c) == EOF)
+		perror("Error writing to stdout");
+	else
+		printf("Successfully wrote '%c' to stdout\n", c);
+
+	return 0;
+}
