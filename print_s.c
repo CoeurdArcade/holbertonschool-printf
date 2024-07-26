@@ -4,17 +4,10 @@
 #include "main.h"
 
 /**
- * printf_string - print a string.
- * @val: argument.
- * is string is a helper function to check if the
- * argument is a string and will iterate through
- * each character in the string, check is any
- * non printable characters are present, if all
- * characters are printable the argument is a string
- * also at the end another check if the argument is
- * a string
+ * is_string - checks if a given argument is a string
+ * @str: the argument to check
  * 
- * Return: the length of the string, or -1 on error.
+ * Return: 1 if the argument is a string, 0 otherwise.
  */
 
 int is_string(const char *str)
@@ -29,6 +22,45 @@ int is_string(const char *str)
 
 	return 1;
 }
+
+/**
+ * _strlen - calculates the lenght of a string
+ * @s: the string to calculate the length of
+ *
+ * Return: the length of the string
+ */
+
+size_t_strlen(const char *s)
+{
+	size_t len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+
+	return len;
+}
+
+/**
+ * _putchar - writes a character to stdout
+ * @c: the character to write
+ *
+ * Return: 1 on success, EOF on failure
+ */
+
+int _putchar(int c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
+ * printf_string - prints a string
+ * @val: the va_list containing the string to print
+ *
+ * Return: the length of the string, or -1 on error
+ */
+
 int printf_string(va_list val)
 {
 	char *str;
