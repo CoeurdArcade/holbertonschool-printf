@@ -6,33 +6,27 @@
 /**
  * printf_string - print a string.
  * @val: argument.
- *
+ * is string is a helper function to check if the
+ * argument is a string and will iterate through
+ * each character in the string, check is any
+ * non printable characters are present, if all
+ * characters are printable the argument is a string
+ * also at the end another check if the argument is
+ * a string
+ * 
  * Return: the length of the string, or -1 on error.
- */
-
-/**
- * helper function to check if the argument is a string
  */
 
 int is_string(const char *str)
 {
-	/**
-	 * iterate through each character in the string
-	 */
 	for (; *str != '\0'; str++)
 	{
-		/**
-		 * check if any non-printable characters are present
-		 */
 		if (!isprint(*str))
 		{
 			return 0;
 		}
 	}
 
-	/**
-	 * if all characters are printable, the argument is a string
-	 */
 	return 1;
 }
 int printf_string(va_list val)
@@ -46,9 +40,6 @@ int printf_string(va_list val)
 		str = "(null)";
 	}
 
-	/**
-	 * check if the argument is a string
-	 */
 	if (!is_string(str))
 	{
 		return -1;
