@@ -1,13 +1,11 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
  * convert_binary - converts an integer to a binary string
  * @n: integer to convert
- * first calculate the length of the binary string
- * second handle negative numbers
- * third convert to binary and store in the string
  *
- * Return: integer represented as a binary number
+ * Return: pointer to the new binary string, or NULL on failure
  */
 
 char *convert_binary(int n)
@@ -22,9 +20,10 @@ char *convert_binary(int n)
 		n = -n;
 	}
 
-	for (size_t j = n; j > 1; j /= 2)
+	/* calculate the length of the binary string */
+	for (len = 1; n > 1; len++)
 	{
-		len++;
+		n /= 2;
 	}
 
 	str = malloc((len + neg + 1) * sizeof(char));
@@ -34,20 +33,23 @@ char *convert_binary(int n)
 		exit(EXIT_FAILURE);
 	}
 
-	str[neg] = '0';
+	/* handle negative numbers */
+	str[neg] = '0'+ neg;
 	if (neg)
 	{
-	str[0] = "1";
+		str[1] = "1";
+		len--;
 	}
 
-	for (size_t i = 0; i < len/2 + neg; i++)
+	/* convert to binary and store in the string */
+	for (size_t i = 0; i < len/2; i++)
 	{
-		char tmp = str[i];
+		char tmp = str[(len - 1)/2 + neg - i];
 		str[i] = str[len - i - 1 + neg];
-		str[len - i - 1 + neg] = tmp;
+		str[(len - 1)/2 + neg - i] = tmp;
 	}
 
-	for (size_t i = len/2 + neg; i < len + neg; i++)
+	for (size_t i = len/2; i < len; i++)
 	{
 		str[i] = n % 2 ? '1' : '0';
 		n /= 2;
