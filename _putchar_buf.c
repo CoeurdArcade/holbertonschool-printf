@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include "main.h"
 
 /**
  * _putchar_buf - writes a buffer of characters
@@ -14,17 +15,4 @@ int _putchar_buf(char *buf, size_t len)
 {
 	return write(1, buf, len)
 
-}
-
-/**
- * _putchar - writes a character to stdout
- * @c: the character to write
- *
- * Return: On success 1, on error -1 is returned, and errno
- * is set appropriately
- */
-
-int _putchar(char c)
-{
-	return write(1, &c, 1);
 }
