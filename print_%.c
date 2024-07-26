@@ -7,7 +7,7 @@
  * Return: 1.
  */
 
-int print_37(void)
+void print_37(void)
 {
 	_putchar('%');
 	return (1);
