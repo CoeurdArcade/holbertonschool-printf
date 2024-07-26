@@ -6,7 +6,7 @@
  * with the integer as a decimal number
  * @i: integer to represent as a decimal number
  *
- * Return: decimal number
+ * Return: pointer to a null-terminated string
  */
 
 char *itoa(int i)
@@ -18,9 +18,9 @@ char *itoa(int i)
 		i = -i;
 	}
 
-	size_t len = 1;
+	size_t len = 0;
 	int j = i;
-	while (j  > 9)
+	while (j  > 0)
 	{
 		len++;
 		j /= 10;
@@ -41,13 +41,6 @@ char *itoa(int i)
 	}
 
 	str[len + neg] = '\0';
-
-	for (size_t l = 0; l < len/2 + neg; l++)
-	{
-		char tmp = str[l];
-		str[l] = str[len - l - 1 + neg];
-		str[len - l - 1 + neg] = tmp;
-	}
 
 	return str;
 }
