@@ -11,24 +11,10 @@
 
 char *convert_binary(int n)
 {
-	int neg = 0;
-	size_t len = 1;
+	int i;
 	char *str;
-	size_t i;
 
-	if (n < 0)
-	{
-		neg = 1;
-		n = -n;
-	}
-
-	/* calculate the length of the binary string */
-	for (len = 1; n > 1; len++)
-	{
-		n /= 2;
-	}
-
-	str = malloc((len + neg + 1) * sizeof(char));
+	str = malloc(33 * sizeof(char));
 	if (!str)
 	{
 		perror("malloc failed");
@@ -36,26 +22,18 @@ char *convert_binary(int n)
 	}
 
 	/* handle negative numbers */
-	str[0] = '0'+ neg;
-	if (neg)
+	if (n < 0)
 	{
-		str[1] = '1';
-		len--;
+		n = ~n + 1;
 	}
 
 	/* convert to binary and store in the string */
-	for (i = 0; i < len / 2; i++)
+	for (i = 31; i >= 0; i--)
 	{
-		char tmp = str[(len - 1) / 2 + neg - i];
-		str[i] = str[len - i - 1 + neg];
-		str[(len - 1) / 2 + neg - i] = tmp;
+		str[31 - i] = (n & (1 << i)) ? '1' : '0';
 	}
 
-	for (i = len / 2; i < len; i++)
-	{
-		str[i] = n % 2 ? '1' : '0';
-		n /= 2;
-	}
+	str[32] = '\0';
 
 	return str;
 }
