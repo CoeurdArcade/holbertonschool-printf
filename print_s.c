@@ -41,24 +41,6 @@ size_t _strlen(const char *s)
 }
 
 /**
- * print_s - prints a string
- * @args: the va_list of arguments to print
- *
- * Return: The number of characters printed
- */
-int print_s(va_list args)
-{
-	char *str = va_arg(args, char *);
-	size_t len;
-
-	if (str == NULL)
-		str = "(null)";
-
-	len = _strlen(str);
-	return (_putchar_buf(str, len));
-}
-
-/**
  * _putchar - writes a character to stdout
  * @c: the character to write
  *
