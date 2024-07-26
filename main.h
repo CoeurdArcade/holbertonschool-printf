@@ -19,21 +19,22 @@ typedef struct specfunc
 	char *flag;
 	int (*func)(va_list, int);
 } SF;
-int print_s(va_list args);
-int _putchar_buf(const char *buf, size_t len);
-int is_string(const char *str);
-int printf_string(va_list val);
-int _putchar(int c);
-int _printf(const char *format, ...);
-int _string(va_list, int);
-int _int(va_list, int);
-int _char(va_list, int);
-int _binary(va_list, int);
-char *itoa(int i);
-char *reverse(char *str);
-char *convert_binary(int);
-int _strlen(char *str);
-int print_37(void);
+int _putchar_buf(char *buf, size_t len);
+int _putchar(char c);
+int main(void);
 void print_37(void);
+char *convert_binary(int n);
+int printf_char(va_list val);
+char *itoa(int i);
+int is_string(const char *str);
+size_t _strlen(const char *s);
+int print_s(va_list args);
+int _putchar(int c);
+int printf_string(va_list val);
+int _strlen(char *str);
+int _strlenc(const char *str);
+int _printf(const char *format, ...);
+int _putchar(int c);
+char *reverse(char *str);
 
 #endif
