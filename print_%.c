@@ -1,3 +1,4 @@
+#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -5,9 +6,10 @@
  *
  * Return: 1.
  */
+
 int print_37(void)
 {
-    _putchar('%');
-    return (1);
+	_putchar('%');
+	return (1);
 }
 
