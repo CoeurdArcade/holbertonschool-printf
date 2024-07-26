@@ -1,16 +1,21 @@
+#include <unistd.h>
 #include "main.h"
 
 /**
  * _putchar_buf - writes a buffer of characters
  * to stdout
  * @buf: the buffer of characters to write
- * @len: The length of the buffer
+ * @len: length of the buffer to write
  *
- * Return: On success 1
- * On error -1 is returned, and errno is set appropriately
+ * Return: On success 1, number of bytes written on error -1
+ * is returned, and errno is set appropriately
  */
 
-int _putchar_buf(const char *buf, size_t len)
+int _putchar_buf(char *buf, size_t len)
 {
-	return (write(1, buf, len));
+	if (write(1, buf, len) < 0)
+	{
+	return -1;
+	}
+	return 1;
 }
