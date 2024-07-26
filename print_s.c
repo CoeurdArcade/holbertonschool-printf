@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include <unistd.h>
 #include "main.h"
 
 /**
@@ -56,7 +55,6 @@ int print_s(va_list args)
 		str = "(null)";
 
 	len = _strlen(str);
-
 	return _putchar_buf(str, len);
 }
 
