@@ -12,11 +12,8 @@
 
 int _putchar_buf(char *buf, size_t len)
 {
-	if (write(1, buf, len) < 0)
-	{
-	return -1;
-	}
-	return 1;
+	return write(1, buf, len)
+
 }
 
 /**
