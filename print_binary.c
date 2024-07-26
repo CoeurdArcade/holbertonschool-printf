@@ -39,7 +39,7 @@ char *convert_binary(int n)
 	str[0] = '0'+ neg;
 	if (neg)
 	{
-		str[1] = "1";
+		str[1] = '1';
 		len--;
 	}
 
