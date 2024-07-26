@@ -25,6 +25,7 @@ int printf_string(va_list val);
 int _putchar(int c);
 char *convert_binary(int n);
 int is_string(const char *str);
+int print_s(va_list args);
 size_t _strlen(const char *s);
 int _strlenc(const char *str);
 char *reverse(char *str);
