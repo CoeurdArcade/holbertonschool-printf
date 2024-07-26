@@ -14,7 +14,7 @@ int is_string(const char *str)
 {
 	for (; *str != '\0'; str++)
 	{
-		if (!isprint(*str))
+	if (!isprint(*str))
 		{
 			return 0;
 		}
@@ -57,17 +57,7 @@ int print_s(va_list args)
 
 	len = _strlen(str);
 
-	return (_putchar_buf(str, len));
-}
-/**
- * _putchar - writes a character to stdout
- * @c: the character to write
- *
- * Return: 1 on success, EOF on failure
- */
-int _putchar(int c)
-{
-	return (write(1, &c, 1));
+	return _putchar_buf(str, len);
 }
 
 /**
@@ -95,7 +85,8 @@ int printf_string(va_list val)
 	length = _strlen(str);
 	for (i = 0; i < length; i++)
 	{
-		_putchar(str[i]);
+	if (_putchar(str[i]) == -1)
+		return -1;
 	}
-	return (length);
+	return length;
 }
