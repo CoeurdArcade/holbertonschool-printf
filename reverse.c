@@ -12,7 +12,7 @@
 
 char *reverse(char *str)
 {
-	size_t len;
+	size_t len = _strlen(str);
 	char *rev = malloc((strlen(str) + 1) * sizeof(char));
 
 	if (!rev)
@@ -20,8 +20,6 @@ char *reverse(char *str)
 		perror("malloc failed");
 		exit(EXIT_FAILURE);
 	}
-
-	len = _strlen(str);
 
 	size_t i;
 	for (i = 0; i < len; i++)
