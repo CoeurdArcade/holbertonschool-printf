@@ -39,6 +39,11 @@ include _printf in your project: Once you have downloaded the source code, you n
 _printf.c : The source file containing the implementation of the _printf function.
 
 main.h: The header file containing the declaration of the _printf function.
+#include "main.h"
+
+You can then compile your project using your favourite C compiler. For example, if you use GCC, you can use the following command:
+
+gcc myprogram.c _char.c _int.c _string.c itoa.c _printf.c -o myprogram
 
 _char.c, _int.c, _string.c, itoa.c : The source files containing the helper functions used by _printf.
 
