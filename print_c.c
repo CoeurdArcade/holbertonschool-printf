@@ -21,11 +21,11 @@ int printf_char(va_list val)
 	/* If it's not, print an error message and return an error code */
 	_putchar('%');
 	_putchar('?');
-	return (1);
+	return -1;
 	}
 
 	/* Print the character to the standard output */
 	_putchar(c);
-	return (1);
+	return 1;
 
 }
