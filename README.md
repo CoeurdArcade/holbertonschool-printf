@@ -1,6 +1,6 @@
 # - PRINTF GROUP PROJECT
 
-  0020246962e845a9a6fd5a9618657d19.png~tplv-6bxrjdptv7-image.png
+  [0020246962e845a9a6fd5a9618657d19.png~tplv-6bxrjdptv7-image.png](blob:https://www.coze.com/029cfb6f-8f1f-40dc-b283-f97ec7952854)
   
 Description 
 
