@@ -30,7 +30,7 @@ int is_string(const char *str)
  * Return: the length of the string
  */
 
-size_t_strlen(const char *s)
+size_t size_t_strlen(const char *s)
 {
 	size_t len = 0;
 
