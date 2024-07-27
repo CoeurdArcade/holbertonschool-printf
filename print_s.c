@@ -49,9 +49,9 @@ size_t_strlen(const char *s)
  * Return: 1 on success, EOF on failure
  */
 
-int _putchar(int c)
+int putchar(int c)
 {
-	return (fwrite(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
