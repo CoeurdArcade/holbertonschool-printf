@@ -1,50 +1,47 @@
-#include <stdlib.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include "main.h"
 
 /**
- * convert_binary - converts an integer to a binary string
- * @n: integer to convert
+ * printf_binary - prints an unsigned int in binary format
+ * @val: the va_list containing the unsigned int to print
  *
- * Return: pointer to the new binary string, or NULL on failure
+ * Return: the number of characters printed, or -1 on error
  */
-
-char *convert_binary(int n)
+int printf_binary(va_list val)
 {
-	int neg = 0;
-	size_t len = 1;
-	char *str;
-	size_t i;
+    unsigned int num = va_arg(val, unsigned int);
+    int count = 0;
+    int temp = num;
 
-	/* handle negative numbers */
-	if (n < 0)
-	{
-		neg = 1;
-		n = ~n + 1;
-	}
+    if (num == 0)
+    {
+        if (_putchar('0') == -1)
+            return -1;
+        count++;
+        return count;
+    }
 
-	for (len = 1; n > 1; len++)
-	{
-		n /= 2;
-	}
+    while (temp > 0)
+    {
+        temp >>= 1;
+        count++;
+    }
 
-	str = malloc((len + neg + 1) * sizeof(char));
-	if (!str)
-	{
-		perror("malloc failed");
-		exit(EXIT_FAILURE);
-	}
-	/* convert to binary and store in the string */
-	str[len + neg] = '\0';
-	for (i = 0; i < len; i++)
-	{
-		str[len - i - 1 + neg] = (n & (1 << i)) ? '1' : '0';
-	}
+    char buffer[count];
+    int i = count - 1;
 
-	if (neg)
-	{
-		str[0] = '-';
-	}
+    while (num > 0)
+    {
+        buffer[i--] = (num & 1) + '0';
+        num >>= 1;
+    }
 
-	return str;
+    for (i = 0; i < count; i++)
+    {
+        if (_putchar(buffer[i]) == -1)
+            return -1;
+    }
+
+    return count;
 }
