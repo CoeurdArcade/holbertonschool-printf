@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 #include <unistd.h>
 
@@ -27,22 +28,36 @@ size_t _strlen(const char *s)
  */
 int printf_string(va_list val)
 {
-        char *str;
-        size_t length;
-        size_t i;
+	char *str;
+	size_t length;
+	size_t i;
 
-        str = va_arg(val, char *);
-        if (str == NULL)
-        {
-                str = "(null)";
-        }
+	str = va_arg(val, char *);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 
-        length = _strlen(str);
-        for (i = 0; i < length; i++)
-        {
-                if (_putchar(str[i]) == -1)
-                        return -1;
-        }
-        return length;
+	length = _strlen(str);
+	for (i = 0; i < length; i++)
+	{
+		if (_putchar(str[i]) == -1)
+			return -1;
+	}
+	return length;
 }
 
+void printf_reversed_string(const char *str)
+{
+	if (str == NULL)
+		return;
+
+	const char *end = str;
+	while (*end) ++end;
+
+	for (--end; end >= str; --end)
+	{
+		putchar(*end);
+	}
+	putchar('\n');
+}
