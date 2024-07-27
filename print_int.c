@@ -15,74 +15,75 @@
  */
 int printf_int(va_list val, int length_modifier, int field_width, int precision, int zero_padding, int negative_flag)
 {
-    long int num;
-    int count = 0;
-    long int temp;
+	long int num;
+	int count = 0;
+	long int temp;
 
-    if (length_modifier == 1)
-        num = (short)va_arg(val, int);
-    else if (length_modifier == 2)
-        num = va_arg(val, long int);
-    else
-        num = va_arg(val, int);
+	if (length_modifier == 1)
+		num = (short)va_arg(val, int);
+	else if (length_modifier == 2)
+		num = va_arg(val, long int);
+	else
+		num = va_arg(val, int);
 
-    if (num < 0 && negative_flag)
-    {
-        if (_putchar('-') == -1)
-            return -1;
-        count++;
-        num = -num;
-    }
+	if (num < 0 && negative_flag)
+	{
+		if (_putchar('-') == -1)
+			return -1;
+		count++;
+		num = -num;
+	}
 
-    temp = num;
-    if (num == 0)
-    {
-        if (_putchar('0') == -1)
-            return -1;
-        count++;
-        return count;
-    }
+	temp = num;
+	if (num == 0)
+	{
+		if (_putchar('0') == -1)
+			return -1;
+		count++;
+		return count;
+	}
 
-    while (temp > 0)
-    {
-        temp /= 10;
-        count++;
-    }
+	while (temp > 0)
+	{
+		temp /= 10;
+		count++;
+	}
 
-    char buffer[count];
-    int i = count - 1;
+	char buffer[count];
+	int i = count - 1;
 
-    while (num > 0)
-    {
-        buffer[i--] = (num % 10) + '0';
-        num /= 10;
-    }
+	while (num > 0)
+	{
+		buffer[i--] = (num % 10) + '0';
+		num /= 10;
+	}
 
-    /* Handle field width */
-    if (field_width > count)
-    {
-        for (int j = 0; j < field_width - count; j++)
-        {
-            if (_putchar(zero_padding ? '0' : ' ') == -1)
-                return -1;
-        }
-    }
+	/* Handle field width */
+	if (field_width > count)
+	{
+		for (int j = 0; j < field_width - count; j++)
+		{
+			if (_putchar(zero_padding ? '0' : ' ') == -1)
+				return -1;
+		}
+	}
 
-    /* Handle precision */
-    if (precision > count)
-    {
-        for (int j = 0; j < precision - count; j++)
-        {
-            if (_putchar('0') == -1)
-                return -1;
-        }
-    }
+	/* Handle precision */
+	if (precision > count)
+	{
+		for (int j = 0; j < precision - count; j++)
+		{
+			if (_putchar('0') == -1)
+				return -1;
+		}
+	}
 
-    for (i = 0; i < count; i++)
-    {
-        if (_putchar(buffer[i]) == -1)
-            return -1;
-    }
+	for (i = 0; i < count; i++)
+	{
+		if (_putchar(buffer[i]) == -1)
+			return -1;
+	}
 
-    return count;
+	return count;
 }
+
