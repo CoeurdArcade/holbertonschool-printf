@@ -9,13 +9,13 @@
  */
 int printf_char(va_list val)
 {
-    int c;
+	int c;
 
-    c = va_arg(val, int);
+	c = va_arg(val, int);
 
-    if (_putchar(c) == -1)
-        return -1;
+	if (_putchar(c) == -1)
+		return -1;
 
-    return 1;
+	return 1;
 }
 
