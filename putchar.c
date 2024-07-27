@@ -9,19 +9,19 @@
  */
 int _putchar(char c)
 {
-    static char buffer[1024];
-    static int buffer_index = 0;
+	static char buffer[1024];
+	static int buffer_index = 0;
 
-    buffer[buffer_index++] = c;
+	buffer[buffer_index++] = c;
 
-    if (buffer_index >= 1024)
-    {
-        if (write(1, buffer, buffer_index) == -1)
-            return -1;
-        buffer_index = 0;
-    }
+	if (buffer_index >= 1024)
+	{
+		if (write(1, buffer, buffer_index) == -1)
+			return -1;
+		buffer_index = 0;
+	}
 
-    return 1;
+	return 1;
 }
 
 /**
@@ -31,15 +31,15 @@ int _putchar(char c)
  */
 int _flush_buffer()
 {
-    static char buffer[1024];
-    static int buffer_index = 0;
+	static char buffer[1024];
+	static int buffer_index = 0;
 
-    if (buffer_index > 0)
-    {
-        if (write(1, buffer, buffer_index) == -1)
-            return -1;
-        buffer_index = 0;
-    }
+	if (buffer_index > 0)
+	{
+		if (write(1, buffer, buffer_index) == -1)
+			return -1;
+		buffer_index = 0;
+	}
 
-    return 1;
+	return 1;
 }
