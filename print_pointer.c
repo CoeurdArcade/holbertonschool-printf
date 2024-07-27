@@ -10,9 +10,14 @@
  */
 int printf_pointer(va_list val)
 {
-	void *ptr = va_arg(val, void *);
-	unsigned long int addr = (unsigned long int)ptr;
+	void *ptr;
+	unsigned long int addr;
 	int count = 0;
+	char buffer[16]; /* 16 characters for a 64-bit address in hexadecimal */
+	int i;
+
+	ptr = va_arg(val, void *);
+	addr = (unsigned long int)ptr;
 
 	if (_putchar('0') == -1)
 		return -1;
@@ -20,8 +25,7 @@ int printf_pointer(va_list val)
 		return -1;
 	count += 2;
 
-	char buffer[16]; /* 16 characters for a 64-bit address in hexadecimal */
-	int i = 15;
+	i = 15;
 
 	while (addr > 0)
 	{
@@ -42,4 +46,3 @@ int printf_pointer(va_list val)
 
 	return count + 16;
 }
-
