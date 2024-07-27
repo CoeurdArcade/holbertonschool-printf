@@ -58,7 +58,7 @@ int printf_int(va_list val, int length_modifier, int field_width, int precision,
         num /= 10;
     }
 
-    // Handle field width
+    /* Handle field width */
     if (field_width > count)
     {
         for (int j = 0; j < field_width - count; j++)
@@ -68,7 +68,7 @@ int printf_int(va_list val, int length_modifier, int field_width, int precision,
         }
     }
 
-    // Handle precision
+    /* Handle precision */
     if (precision > count)
     {
         for (int j = 0; j < precision - count; j++)
