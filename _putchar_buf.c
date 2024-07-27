@@ -13,5 +13,5 @@
 
 int _putchar_buf(char *buf, size_t len)
 {
-	return write(1, buf, len)
+	return write(1, buf, len);
 }
