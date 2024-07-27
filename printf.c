@@ -49,6 +49,33 @@ int printf_string(va_list val)
 }
 
 /**
+ * printf_reversed_string - prints a reversed string
+ * @val: the va_list containing the string to print
+ *
+ * Return: the length of the string, or -1 on error
+ */
+int printf_reversed_string(va_list val)
+{
+	char *str;
+	size_t length;
+	ssize_t i;
+
+	str = va_arg(val, char *);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+
+	length = _strlen(str);
+	for (i = length - 1; i >= 0; i--)
+	{
+		if (_putchar(str[i]) == -1)
+			return -1;
+	}
+	return length;
+}
+
+/**
  * _printf - a function that produces output according to a format
  * @format: initializes the variable arguments list
  * prints the formatted string
@@ -158,7 +185,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'r')
 			{
-				result += printf_reversed_string(va_list);
+				result += printf_reversed_string(args);
 			}
 			else if (*format == 'R')
 			{
@@ -275,3 +302,4 @@ int _printf(const char *format, ...)
 
 	return result;
 }
+
