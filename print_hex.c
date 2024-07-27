@@ -18,6 +18,12 @@ int printf_hex(va_list val, int uppercase, int length_modifier, int field_width,
 	unsigned long int num;
 	int count = 0;
 	unsigned long int temp;
+	int i;
+	char buffer[16];  /* Assuming the maximum length of the buffer */
+
+	(void)field_width;  /* Suppress unused parameter warning */
+	(void)precision;    /* Suppress unused parameter warning */
+	(void)zero_padding; /* Suppress unused parameter warning */
 
 	if (length_modifier == 1)
 		num = (unsigned short)va_arg(val, unsigned int);
@@ -41,8 +47,7 @@ int printf_hex(va_list val, int uppercase, int length_modifier, int field_width,
 		count++;
 	}
 
-	char buffer[count];
-	int i = count - 1;
+	i = count - 1;
 
 	while (num > 0)
 	{
