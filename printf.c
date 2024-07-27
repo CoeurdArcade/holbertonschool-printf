@@ -2,6 +2,34 @@
 #include <stdio.h>
 #include "main.h"
 #include <unistd.h>
+#include <string.h>
+
+/**
+ * printf_reversed_string - Prints a reversed string.
+ * @format: The format string (currently unused).
+ * @str: The string to be reversed and printed.
+ *
+ * Description: This function takes a string and prints it in reverse order.
+ *              If the format string contains '%s', a newline is printed
+ *              after the reversed string.
+ */
+void printf_reversed_string(const char *format, const char *str)
+{
+	int length = strlen(str);
+	int i;
+
+	/* Print the string in reverse order */
+	for (i = length - 1; i >= 0; i--)
+	{
+		putchar(str[i]);
+	}
+
+	/* Print a newline if the format string contains '%s' */
+	if (format != NULL && strstr(format, "%s") != NULL)
+	{
+		putchar('\n');
+	}
+}
 
 /**
  * _strlen - returns the length of a string
@@ -56,23 +84,9 @@ int printf_string(va_list val)
  */
 int printf_reversed_string(va_list val)
 {
-	char *str;
-	size_t length;
-	ssize_t i;
+	const char *str = va_arg(val, const char *);
 
-	str = va_arg(val, char *);
-	if (str == NULL)
-	{
-		str = "(null)";
-	}
-
-	length = _strlen(str);
-	for (i = length - 1; i >= 0; i--)
-	{
-		if (_putchar(str[i]) == -1)
-			return -1;
-	}
-	return length;
+	return 0;
 }
 
 /**
