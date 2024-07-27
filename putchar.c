@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include <unistd.h>
-#include <errno.h>
-#include <stddef.>
 #include "main.h"
 
 /**
