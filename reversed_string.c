@@ -3,16 +3,23 @@
 
 void printf_reversed_string(const char *str)
 {
-	if (str == NULL)
-		return;
+	const char *end;
+	int length;
 
-	const char *end = str;
-	while (*end) ++end;
+	length = strlen(str);
+	end = str + length - 1;
 
-	for (--end; end >= str; --end)
+	while (end >= str)
 	{
 		putchar(*end);
+		end--;
 	}
+
 	putchar('\n');
+}
+int main ()
+{
+	printf_reversed_string("Hello, World!");
+	return 0;
 }
 
