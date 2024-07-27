@@ -1,42 +1,23 @@
+#include <stdio.h>
+#include <stdarg.h>
 #include <unistd.h>
+#include <errno.h>
 #include "main.h"
 
-/* Global buffer and index */
-char buffer [1024];
-int buffer_index = 0;
-
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * _putchar - Writes the character c to stdout.
+ * @c: The character to print.
  *
- * Return: On success 1, on error, -1 is returned, and errno is set appropriately
+ * Return: On success, returns 1.
+ * On error, returns -1 and sets errno appropriately.
  */
+
 int _putchar(char c)
 {
-	buffer[buffer_index++] = c;
-
-	if (buffer_index >= 1024)
+	if (write(1, &c, 1) < 0)
 	{
-		if (write(1, buffer, buffer_index) == -1)
-			return -1;
-		buffer_index = 0;
-	}
-
-	return 1;
-}
-
-/**
- * _flush_buffer - flushes the buffer to stdout
- *
- * Return: On success, the number of bytes written. On error, -1 is returned.
- */
-int _flush_buffer()
-{
-	if (buffer_index > 0)
-	{
-		if (write(1, buffer, buffer_index) == -1)
-			return -1;
-		buffer_index = 0;
+		perror("Error writing to stdout");
+		return -1;
 	}
 
 	return 1;

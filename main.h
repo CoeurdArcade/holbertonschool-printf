@@ -1,29 +1,33 @@
 #ifndef MAIN_H
 #define MAIN_H
-
 #include <stdarg.h>
+/**
+ * struct specfunc - struc to couple a specifier to a function
+ * @flag: specifier
+ * @func: pointer to the function
+ * Description: interpret the specifier and the related function
+ */
 
-nt _putchar_buf(char *buf, size_t len);
-int printf_binary(va_list val);
-int printf_char(va_list val);
-int printf_custom_string(va_list val);
-int printf_hex(va_list val, int uppercase, int length_modifier, int field_width, int precision, int zero_padding);
-int printf_int(va_list val, int length_modifier, int field_width, int precision, int zero_padding, int negative_flag);
-int printf_octal(va_list val, int length_modifier, int field_width, int precision, int zero_padding);
-int printf_pointer(va_list val);
-size_t _strlen(const char *s);
+typedef struct specfunc
+{
+	char *flag;
+	int (*func)(va_list, int);
+} SF;
+
+int is_string(const char *str);
 int printf_string(va_list val);
-int printf_rot13_string(va_list val);
-int _strlenc(const char *str);
-int printf_unsigned(va_list val, int length_modifier, int field_width, int precision, int zero_padding);
-int _putchar(char c);
-int printf_char(va_list args);
-int printf_string(va_list args);
-int printf_reversed_string(va_list args);
+size_t_strlen(const char *s);
+int _putchar(int c);
 int _printf(const char *format, ...);
-int printf_reversed_string(const char *format, ...);
-int main();
-int _flush_buffer();
-void printf_reversed_string(const char *format, const char *str);
-
-#endif /* MAIN_H */
+int _putchar(char c);
+int _string(va_list, int);
+int _int(va_list, int);
+int _char(va_list, int);
+int _binary(va_list, int);
+char *itoa(int i);
+char *reverse(char *);
+char *convert_binary(int);
+int _strlen(char *str);
+int _strlenc(const char *str);
+int print_37(void);
+#endif
