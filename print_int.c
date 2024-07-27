@@ -18,6 +18,9 @@ int printf_int(va_list val, int length_modifier, int field_width, int precision,
 	long int num;
 	int count = 0;
 	long int temp;
+	char buffer[20]; /* Assuming a reasonable maximum size for the buffer */
+	int i;
+	int j;
 
 	if (length_modifier == 1)
 		num = (short)va_arg(val, int);
@@ -49,8 +52,7 @@ int printf_int(va_list val, int length_modifier, int field_width, int precision,
 		count++;
 	}
 
-	char buffer[count];
-	int i = count - 1;
+	i = count - 1;
 
 	while (num > 0)
 	{
@@ -61,7 +63,7 @@ int printf_int(va_list val, int length_modifier, int field_width, int precision,
 	/* Handle field width */
 	if (field_width > count)
 	{
-		for (int j = 0; j < field_width - count; j++)
+		for (j = 0; j < field_width - count; j++)
 		{
 			if (_putchar(zero_padding ? '0' : ' ') == -1)
 				return -1;
@@ -71,7 +73,7 @@ int printf_int(va_list val, int length_modifier, int field_width, int precision,
 	/* Handle precision */
 	if (precision > count)
 	{
-		for (int j = 0; j < precision - count; j++)
+		for (j = 0; j < precision - count; j++)
 		{
 			if (_putchar('0') == -1)
 				return -1;
