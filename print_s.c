@@ -32,14 +32,14 @@ int is_string(const char *str)
 
 size_t size_t_strlen(const char *s)
 {
-	size_t len = 0;
+	size_t length = 0;
 
-	while (s[len] != '\0')
+	while (s[length] != '\0')
 	{
-		len++;
+		length++;
 	}
 
-	return len;
+	return (length);
 }
 
 /**
