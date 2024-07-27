@@ -225,7 +225,6 @@ int _printf(const char *format, ...)
 		format++;
 	}
 
-	_flush_buffer();
 	va_end(args);
 
 	return result;
