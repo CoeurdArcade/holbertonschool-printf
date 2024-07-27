@@ -15,20 +15,17 @@
  */
 void printf_reversed_string(const char *format, const char *str)
 {
-	int length = strlen(str);
-	int i;
+	 va_list args;
+    va_start(args, format);
 
 	/* Print the string in reverse order */
-	for (i = length - 1; i >= 0; i--)
-	{
-		putchar(str[i]);
-	}
+	const char *str = va_arg(args, const char *);
 
-	/* Print a newline if the format string contains '%s' */
-	if (format != NULL && strstr(format, "%s") != NULL)
-	{
-		putchar('\n');
-	}
+	printf(format, str);
+
+	va_end(args);
+	return 0;
+
 }
 
 /**
