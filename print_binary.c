@@ -13,13 +13,14 @@ int printf_binary(va_list val)
 	unsigned int num = va_arg(val, unsigned int);
 	int count = 0;
 	int temp = num;
+	int i;
+	char buffer[32]; /* Assuming a maximum of 32 bits for an unsigned int */
 
 	if (num == 0)
 	{
 		if (_putchar('0') == -1)
 			return -1;
-		count++;
-		return count;
+		return 1;
 	}
 
 	while (temp > 0)
@@ -28,8 +29,7 @@ int printf_binary(va_list val)
 		count++;
 	}
 
-	char buffer[count];
-	int i = count - 1;
+	i = count - 1;
 
 	while (num > 0)
 	{
@@ -45,4 +45,3 @@ int printf_binary(va_list val)
 
 	return count;
 }
-
