@@ -49,7 +49,7 @@ int printf_unsigned(va_list val, int length_modifier, int field_width, int preci
         num /= 10;
     }
 
-    // Handle field width
+    /* Handle field width */
     if (field_width > count)
     {
         for (int j = 0; j < field_width - count; j++)
@@ -59,7 +59,7 @@ int printf_unsigned(va_list val, int length_modifier, int field_width, int preci
         }
     }
 
-    // Handle precision
+    /* Handle precision */
     if (precision > count)
     {
         for (int j = 0; j < precision - count; j++)
