@@ -1,50 +1,37 @@
-#include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * printf_reversed_string - Prints a string in reverse.
+ * @str: The string to be printed in reverse.
+ *
+ * Return: void.
+ */
+
 void printf_reversed_string(const char *str)
 {
-	if (str == NULL) return;
+	const char *end;
+	int len;
 
-	const char *end = str + strlen(str) - 1;
+	len = strlen(str);
+	end = str + len - 1;
 
 	while (end >= str)
 	{
 		putchar(*end);
 		end--;
 	}
+	putchar ('\n');
 }
 
-void _printf(const char *format, ...)
-{
-	va_list args;
-	va_start(args, format);
-
-	while (*format != '\0')
-	{
-		if (*format == '%')
-		{
-			format++;
-			if (*format == 's')
-			{	
-				const char *str = va_arg(args, const char *);
-				printf_reversed_string(str);
-			}
-			/* Handle other format specifiers here */
-		}
-		else
-		{
-			putchar(*format);
-		}
-		format++;
-	}
-
-	va_end(args);
-}
+/**
+ * main - Entry point of the program.
+ *
+ * Return: Always 0 (Success).
+ */
 
 int main()
 {
-	_printf("Reversed string: %s\n", "Hello, World!");
+	printf_reversed_string("Reversed string: %s\n", "Hello, World!");
 	return 0;
 }
-
