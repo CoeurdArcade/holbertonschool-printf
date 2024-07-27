@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <string.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -12,7 +13,8 @@ int printf_custom_string(va_list val)
 {
 	char *str;
 	size_t length;
-	int count = 0;
+	char *reversed;
+	size_t i;
 
 	str = va_arg(val, char *);
 	if (str == NULL)
@@ -21,21 +23,20 @@ int printf_custom_string(va_list val)
 	}
 
 	length = _strlen(str);
-	char *reversed = malloc(length + 1);
+	reversed = (char *)malloc(length + 1);
 
 	if (!reversed)
 	{
-		free(reversed);
 		return -1;
 	}
 
-	for (size_t i = 0; i < length; i++)
+	for (i = 0; i < length; i++)
 	{
 		reversed[i] = str[length - i - 1];
 	}
 	reversed[length] = '\0';
 
-	for (size_t i = 0; i < length; i++)
+	for (i = 0; i < length; i++)
 	{
 		if (_putchar(reversed[i]) == -1)
 		{
@@ -47,3 +48,4 @@ int printf_custom_string(va_list val)
 	free(reversed);
 	return length;
 }
+
