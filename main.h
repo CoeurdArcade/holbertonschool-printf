@@ -19,5 +19,8 @@ int printf_pointer(va_list val);
 int printf_rot13_string(va_list val);
 size_t _strlen(const char *s);
 int printf_reversed_string(const char *format, ...);
+int printf_char(va_list args);
+int printf_string(va_list args);
+int printf_reversed_string(va_list args);
 
 #endif /* MAIN_H */
