@@ -5,29 +5,20 @@
 #include <stdarg.h>
 #include <stddef.h>
 
-/**
- * struct specfunc - struc to couple a specifier to a function
- * @flag: specifier
- * @func: pointer to the function
- * Description: interpret the specifier and the related function
- */
-
-typedef struct specfunc
-{
-	char *flag;
-	int (*func)(va_list, int);
-} SF;
-
 int _putchar(char c);
-int _putchar_buf(char *buf, size_t len);
 int _printf(const char *format, ...);
 int printf_char(va_list val);
 int printf_string(va_list val);
-char *convert_binary(int n);
-int is_string(const char *str);
-int print_s(va_list args);
+int printf_int(va_list val, int length_modifier, int field_width, int precision, int zero_padding, int negative_flag);
+int printf_binary(va_list val);
+int printf_unsigned(va_list val, int length_modifier, int field_width, int precision, int zero_padding);
+int printf_octal(va_list val, int length_modifier, int field_width, int precision, int zero_padding);
+int printf_hex(va_list val, int uppercase, int length_modifier, int field_width, int precision, int zero_padding);
+int printf_custom_string(va_list val);
+int printf_pointer(va_list val);
+int printf_reversed_string(va_list val);
+int printf_rot13_string(va_list val);
 size_t _strlen(const char *s);
-int _strlenc(const char *str);
-char *reverse(char *str);
 
 #endif /* MAIN_H */
+
