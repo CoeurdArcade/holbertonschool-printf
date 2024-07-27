@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+#include <stddef.h>
+
 /**
  * struct specfunc - struc to couple a specifier to a function
  * @flag: specifier
