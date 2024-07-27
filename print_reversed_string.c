@@ -1,51 +1,32 @@
-#include <stdarg.h>
-#include <stdlib.h>
-#include <string.h>
 #include "main.h"
+#include <unistd.h>
 
 /**
- * printf_reversed_string - prints the reversed string
- * @val: the va_list containing the string to print
+ * _strlen - returns the length of a string
+ * @s: the string whose length to calculate
  *
- * Return: the length of the string, or -1 on error
+ * Return: the length of the string
  */
-int printf_reversed_string(va_list val)
+size_t _strlen(const char *s)
 {
-	char *str;
-	size_t length;
-	int count = 0;
+	size_t length = 0;
 
-	str = va_arg(val, char *);
-	if (str == NULL)
+	while (s[length] != '\0')
 	{
-		str = "(null)";
+		length++;
 	}
 
-	length = _strlen(str);
-	char *reversed = malloc(length + 1);
-
-	if (!reversed)
-	{
-		free(reversed);
-		return -1;
-	}
-
-	for (size_t i = 0; i < length; i++)
-	{
-		reversed[i] = str[length - i - 1];
-	}
-	reversed[length] = '\0';
-
-	for (size_t i = 0; i < length; i++)
-	{
-		if (_putchar(reversed[i]) == -1)
-		{
-			free(reversed);
-			return -1;
-		}
-	}
-
-	free(reversed);
 	return length;
 }
 
+/**
+ * _putchar - writes the character c to stdout
+ * @c: the character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
