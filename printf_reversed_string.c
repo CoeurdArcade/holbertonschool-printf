@@ -8,27 +8,22 @@
  * Return: void.
  */
 
-void printf_reversed_string(const char *format, const char *str)
+int printf_reversed_string(va_list val)
 {
+	const char *str = va_arg(val, const char *);
 	int len = strlen(str);
-	char reversed [len + 1];
+	char *reversed = malloc(len + 1);
+	int i;
 
-	for (int i = 0; i < len; i++)
+	if (!reversed) return -1;
+
+	for (i = 0; i < len; i++)
 	{
 		reversed[i] = str[len - 1 - i];
 	}
 	reversed[len] = '\0';
-	printf(format, reversed);
-}
 
-/**
- * main - Entry point of the program.
- *
- * Return: Always 0 (Success).
- */
-
-int main()
-{
-	printf_reversed_string("Reversed string: %s\n", "Hello, World!");
-	return 0;
+	printf("%s", reversed);
+	free(reversed);
+	return len;
 }
