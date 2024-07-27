@@ -86,4 +86,3 @@ int printf_int(va_list val, int length_modifier, int field_width, int precision,
 
     return count;
 }
-
