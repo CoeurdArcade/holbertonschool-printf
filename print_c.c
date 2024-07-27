@@ -18,3 +18,4 @@ int printf_char(va_list val)
 
     return 1;
 }
+
