@@ -26,13 +26,26 @@ int printf_rot13_string(va_list val)
 
 	if (!rot13)
 	{
-		free(rot13);
 		return -1;
 	}
 
 	for (size_t i = 0; i < length; i++)
 	{
-		rot13[i] = str[(length - i - 1 + 13) % 26];
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			if (str[i] >= 'a' && str[i] <= 'z')
+			{
+				rot13[i] = ((str[i] - 'a' + 13) % 26) + 'a';
+			}
+			else if (str[i] >= 'A' && str[i] <= 'Z')
+			{
+				rot13[i] = ((str[i] - 'A' + 13) % 26) + 'A';
+			}
+		}
+		else
+		{
+			rot13[i] = str[i];
+		}
 	}
 	rot13[length] = '\0';
 
