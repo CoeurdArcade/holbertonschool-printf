@@ -16,7 +16,6 @@ int printf_octal(va_list val, int length_modifier, int field_width, int precisio
 int printf_hex(va_list val, int uppercase, int length_modifier, int field_width, int precision, int zero_padding);
 int printf_custom_string(va_list val);
 int printf_pointer(va_list val);
-int printf_reversed_string(va_list val);
 int printf_rot13_string(va_list val);
 size_t _strlen(const char *s);
 void printf_reversed_string(const char *str);
