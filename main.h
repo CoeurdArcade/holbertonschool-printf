@@ -19,7 +19,6 @@ int printf_pointer(va_list val);
 int printf_reversed_string(va_list val);
 int printf_rot13_string(va_list val);
 size_t _strlen(const char *s);
-void _flush_buffer(void);
 int _flush_buffer(void);
 unsigned int _strlen(const char *s);
 
