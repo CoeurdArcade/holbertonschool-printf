@@ -8,9 +8,9 @@
  *
  * Return: the length of the string
  */
-size_t _strlen(const char *s)
+unsigned int _strlen(const char *s)
 {
-	size_t len = 0;
+	unsigned int len = 0;
 
 	while (s[len] != '\0')
 	{
@@ -29,7 +29,7 @@ size_t _strlen(const char *s)
 int printf_string(va_list val)
 {
 	char *str;
-	size_t length;
+	unsigned int length;
 
 	str = va_arg(val, char *);
 	if (str == NULL)
@@ -38,7 +38,7 @@ int printf_string(va_list val)
 	}
 
 	length = _strlen(str);
-	for (size_t i = 0; i < length; i++)
+	for (unsigned int i = 0; i < length; i++)
 	{
 		if (_putchar(str[i]) == -1)
 			return -1;
