@@ -17,6 +17,8 @@ int printf_octal(va_list val, int length_modifier, int field_width, int precisio
 	unsigned long int num;
 	int count = 0;
 	unsigned long int temp;
+	char buffer[64]; /* Fixed size buffer */
+	int i, j;
 
 	if (length_modifier == 1)
 		num = (unsigned short)va_arg(val, unsigned int);
@@ -40,8 +42,7 @@ int printf_octal(va_list val, int length_modifier, int field_width, int precisio
 		count++;
 	}
 
-	char buffer[count];
-	int i = count - 1;
+	i = count - 1;
 
 	while (num > 0)
 	{
@@ -52,7 +53,7 @@ int printf_octal(va_list val, int length_modifier, int field_width, int precisio
 	/* Handle field width */
 	if (field_width > count)
 	{
-		for (int j = 0; j < field_width - count; j++)
+		for (j = 0; j < field_width - count; j++)
 		{
 			if (_putchar(zero_padding ? '0' : ' ') == -1)
 				return -1;
@@ -62,7 +63,7 @@ int printf_octal(va_list val, int length_modifier, int field_width, int precisio
 	/* Handle precision */
 	if (precision > count)
 	{
-		for (int j = 0; j < precision - count; j++)
+		for (j = 0; j < precision - count; j++)
 		{
 			if (_putchar('0') == -1)
 				return -1;
@@ -77,3 +78,4 @@ int printf_octal(va_list val, int length_modifier, int field_width, int precisio
 
 	return count;
 }
+
