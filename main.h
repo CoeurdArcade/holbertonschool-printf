@@ -21,4 +21,3 @@ int printf_rot13_string(va_list val);
 size_t _strlen(const char *s);
 
 #endif /* MAIN_H */
-
