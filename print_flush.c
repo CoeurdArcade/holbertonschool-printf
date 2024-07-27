@@ -2,17 +2,6 @@
 #include "main.h"
 
 /**
- * _flush_buffer - Flushes the standard output buffer
- *
- * Description: This function uses fflush to flush the standard output buffer,
- * forcing immediate display of anything pending in the buffer.
- */
-void _flush_buffer(void)
-{
-	fflush(stdout);
-}
-
-/**
  * _flush_buffer - Entry point of the program
  *
  * Return: Always 0 (Success)
