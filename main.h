@@ -20,5 +20,6 @@ int printf_reversed_string(va_list val);
 int printf_rot13_string(va_list val);
 size_t _strlen(const char *s);
 int _flush_buffer(void);
+int _flush_buffer(int count);
 
 #endif /* MAIN_H */
