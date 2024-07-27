@@ -8,20 +8,17 @@
  * Return: void.
  */
 
-void printf_reversed_string(const char *str)
+void printf_reversed_string(const char *format, const char *str)
 {
-	const char *end;
-	int len;
+	int len = strlen(str);
+	char reversed [len + 1];
 
-	len = strlen(str);
-	end = str + len - 1;
-
-	while (end >= str)
+	for (int i = 0; i < len; i++)
 	{
-		putchar(*end);
-		end--;
+		reversed[i] = str[len - 1 - i];
 	}
-	putchar ('\n');
+	reversed[len] = '\0';
+	printf(format, reversed);
 }
 
 /**

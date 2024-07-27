@@ -18,6 +18,6 @@ int printf_custom_string(va_list val);
 int printf_pointer(va_list val);
 int printf_rot13_string(va_list val);
 size_t _strlen(const char *s);
-void printf_reversed_string(const char *str);
+void printf_reversed_string(const char *format, const char *str);
 
 #endif /* MAIN_H */
