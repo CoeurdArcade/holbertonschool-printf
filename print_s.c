@@ -30,6 +30,7 @@ int printf_string(va_list val)
 {
 	char *str;
 	unsigned int length;
+	unsigned int i;
 
 	str = va_arg(val, char *);
 	if (str == NULL)
@@ -38,7 +39,7 @@ int printf_string(va_list val)
 	}
 
 	length = _strlen(str);
-	for (unsigned int i = 0; i < length; i++)
+	for (i = 0; i < length; i++)
 	{
 		if (_putchar(str[i]) == -1)
 			return -1;
