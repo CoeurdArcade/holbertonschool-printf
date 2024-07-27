@@ -40,6 +40,7 @@ int _printf(const char *format, ...)
 				while (*format >= '0' && *format <= '9')
 				{
 					field_width = field_width * 10 + (*format - '0');
+					format++;
 				}
 			}
 
