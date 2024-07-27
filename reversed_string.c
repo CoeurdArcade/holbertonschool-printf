@@ -12,16 +12,23 @@
  *              using the specified format.
  */
 
-void printf_reversed_string(const char *format, const char *str) {
-	int len = strlen(str);
-	char *reversed = (char *)malloc(len + 1);
-	if (reversed == NULL) {
+void printf_reversed_string(const char *format, const char *str)
+{
+	int len;
+	char *reversed;
+	int i;
+
+	len = strlen(str);
+	reversed = (char *)malloc(len + 1);
+
+	if (reversed == NULL)
+	{
 		fprintf(stderr, "Memory allocation failed\n");
 		return;
 	}
 
-	int i;
-	for (i = 0; i < len; i++) {
+	for (i = 0; i < len; i++)
+	{
 		reversed[i] = str[len - 1 - i];
 	}
 	reversed[len] = '\0';
