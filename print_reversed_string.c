@@ -18,3 +18,31 @@ size_t _strlen(const char *s)
 
 	return length;
 }
+
+/**
+ * printf_string - prints a string
+ * @val: the va_list containing the string to print
+ *
+ * Return: the length of the string, or -1 on error
+ */
+int printf_string(va_list val)
+{
+        char *str;
+        size_t length;
+        size_t i;
+
+        str = va_arg(val, char *);
+        if (str == NULL)
+        {
+                str = "(null)";
+        }
+
+        length = _strlen(str);
+        for (i = 0; i < length; i++)
+        {
+                if (_putchar(str[i]) == -1)
+                        return -1;
+        }
+        return length;
+}
+
