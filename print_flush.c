@@ -13,11 +13,11 @@ void _flush_buffer(void)
 }
 
 /**
- * main - Entry point of the program
+ * _flush_buffer - Entry point of the program
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+int _flush_buffer(void)
 {
 	printf("This message will be displayed before the flush.\n");
 	_flush_buffer();
