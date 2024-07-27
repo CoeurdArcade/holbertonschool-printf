@@ -10,37 +10,40 @@
  */
 int printf_custom_string(va_list val)
 {
-    char *str;
-    size_t length;
-    int count = 0;
+	char *str;
+	size_t length;
+	int count = 0;
 
-    str = va_arg(val, char *);
-    if (str == NULL)
-    {
-        str = "(null)";
-    }
+	str = va_arg(val, char *);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 
-    length = _strlen(str);
-    for (size_t i = 0; i < length; i++)
-    {
-        if (str[i] < 32 || str[i] >= 127)
-        {
-            if (_putchar('\\') == -1)
-                return -1;
-            if (_putchar('x') == -1)
-                return -1;
-            if (_putchar((str[i] >> 4) + ((str[i] >> 4 > 9) ? 'a' - 10 : '0')) == -1)
-                return -1;
-            if (_putchar((str[i] & 0xF) + ((str[i] & 0xF > 9) ? 'a' - 10 : '0')) == -1)
-                return -1;
-            count += 4;
-        }
-        else
-        {
-            if (_putchar(str[i]) == -1)
-                return -1;
-            count++;
-        }
-    }
-    return count;
+	length = _strlen(str);
+	char *reversed = malloc(length + 1);
+
+	if (!reversed)
+	{
+		free(reversed);
+		return -1;
+	}
+
+	for (size_t i = 0; i < length; i++)
+	{
+		reversed[i] = str[length - i - 1];
+	}
+	reversed[length] = '\0';
+
+	for (size_t i = 0; i < length; i++)
+	{
+		if (_putchar(reversed[i]) == -1)
+		{
+			free(reversed);
+			return -1;
+		}
+	}
+
+	free(reversed);
+	return length;
 }
