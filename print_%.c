@@ -9,7 +9,6 @@
 
 int print_37(void)
 {
-        _putchar('%');
-        return (1);
+	_putchar('%');
+	return (1);
 }
-

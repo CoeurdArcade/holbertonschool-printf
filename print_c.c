@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -8,23 +8,11 @@
  * Return: 1.
  */
 
-int _char(va_list val, int flag)
+int printf_char(va_list val)
 {
-	int count = 0;
 	char c;
 
-	while ((c = va_arg(val, int)) != '\0')
-	{
-		if (flag)
-		{
-			putchar(c);
-		}
-		else
-		{
-			putchar(c + 32);
-		}
-		count++;
-	}
-	putchar ('\n');
-	return count;
+	c = va_arg(val, int);
+	_putchar(c);
+	return (1);
 }

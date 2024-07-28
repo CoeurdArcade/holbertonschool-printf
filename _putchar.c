@@ -1,4 +1,7 @@
+#include <stdio.h>
+#include <stdarg.h>
 #include <unistd.h>
+#include <errno.h>
 #include "main.h"
 
 /**
@@ -9,7 +12,13 @@
  * On error, returns -1 and sets errno appropriately.
  */
 
-int _putchar(int c)
+int _putchar(char c)
 {
-	return write(1, &c, 1);
+	if (write(1, &c, 1) < 0)
+	{
+		perror("Error writing to stdout");
+		return -1;
+	}
+
+	return 1;
 }

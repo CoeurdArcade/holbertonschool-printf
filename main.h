@@ -1,9 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
-#include <stddef.h>
-#include <stdio.h>
-
 /**
  * struct specfunc - struc to couple a specifier to a function
  * @flag: specifier
@@ -17,16 +14,16 @@ typedef struct specfunc
 	int (*func)(va_list, int);
 } SF;
 
-/* Function prototypes */
-
-int _putchar(int c);
 int _printf(const char *format, ...);
+int _putchar(char c);
+int _string(va_list, int);
+int _int(va_list, int);
+int _char(va_list, int);
+int _binary(va_list, int);
+char *itoa(int i);
+char *reverse(char *);
+char *convert_binary(int);
 int _strlen(char *str);
 int _strlenc(const char *str);
-int is_string(const char *str);
-size_t size_t_strlen(const char *s);
-int _char(va_list val, int flag);
-int printf_string(va_list val);
 int print_37(void);
-
-#endif /* MAIN_H */
+#endif
