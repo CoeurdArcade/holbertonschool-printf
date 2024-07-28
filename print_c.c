@@ -13,9 +13,6 @@ int _char(va_list val, int flag)
         /* Suppress unused parameter warning */
         (void)flag;
 
-        /* Declare the variable at the beginning of the block */
-        int c;
-
         /* Retrieve the character from the va_list */
         c = va_arg(val, int);
 
