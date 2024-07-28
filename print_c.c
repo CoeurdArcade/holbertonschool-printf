@@ -12,10 +12,16 @@
 int _char(va_list val, int flag)
 {
 	(void)flag;
-	int c = va_arg(val, int);
+	int c;
+	c = va_arg(val, int);
 	putchar(c);
 
 	return 1;
+}
+
+int _putchar(char c)
+{
+	return putchar(c);
 }
 
 int main()
