@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -10,9 +11,19 @@
 
 int _char(va_list val, int flag)
 {
-	char c;
+	(void)flag;
+	int c = va_arg(val, int);
+	putchar(c);
 
-	c = va_arg(val, int flag);
-	_putchar(c);
-	return (1);
+	return 1;
+}
+
+int main()
+{
+	va_list val;
+	va_start(val, 0);
+	_char(val, 0);
+	va_end(val);
+
+	return 0;
 }
