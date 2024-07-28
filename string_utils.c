@@ -43,18 +43,6 @@ size_t size_t_strlen(const char *s)
 }
 
 /**
- * _putchar - writes a character to stdout
- * @c: the character to write
- *
- * Return: 1 on success, EOF on failure
- */
-
-int _putchar(int c)
-{
-        return (write(1, &c, 1));
-}
-
-/**
  * printf_string - prints a string
  * @val: the va_list containing the string to print
  *
