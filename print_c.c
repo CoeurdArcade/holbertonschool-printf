@@ -21,7 +21,8 @@ int _char(va_list val, int flag)
 int main()
 {
 	va_list val;
-	va_start(val, 0);
+	int dummy;
+	va_start(val, dummy);
 	_char(val, 0);
 	va_end(val);
 
