@@ -18,7 +18,7 @@ typedef struct specfunc
 
 int is_string(const char *str);
 int printf_string(va_list val);
-size_t size_t__strlen(const char *s);
+size_t size_t_strlen(const char *s);
 int _putchar(int c);
 void printf_reversed_string(const char *format, const char *str);
 int _printf(const char *format, ...);
