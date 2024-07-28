@@ -11,11 +11,5 @@
 
 int _putchar(int c)
 {
-	if (write(1, &c, 1) < 0)
-	{
-		perror("Error writing to stdout");
-		return -1;
-	}
-
-	return 1;
+	return write(1, &c, 1);
 }

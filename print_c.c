@@ -18,19 +18,3 @@ int _char(va_list val, int flag)
 
 	return 1;
 }
-
-int _putchar(char c)
-{
-	return putchar(c);
-}
-
-int main()
-{
-	va_list val;
-	int dummy;
-	va_start(val, dummy);
-	_char(val, 0);
-	va_end(val);
-
-	return 0;
-}
