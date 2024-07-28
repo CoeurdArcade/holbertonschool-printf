@@ -9,7 +9,7 @@
  * On error, returns -1 and sets errno appropriately.
  */
 
-int _putchar(char c)
+int _putchar(int c)
 {
 	if (write(1, &c, 1) < 0)
 	{
