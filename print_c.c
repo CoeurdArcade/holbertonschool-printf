@@ -19,7 +19,7 @@ int _char(va_list val, int flag)
 	return 1;
 }
 
-int _putchar(char c)
+int putchar(char c)
 {
 	return putchar(c);
 }

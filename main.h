@@ -24,7 +24,7 @@ int _strlen(char *str);
 int _strlenc(const char *str);
 int is_string(const char *str);
 size_t size_t_strlen(const char *s);
-int _putchar(char c);
+int putchar(char c);
 int printf_string(va_list val);
 int print_37(void);
 
