@@ -10,16 +10,21 @@
 
 int _char(va_list val, int flag)
 {
-        /* Suppress unused parameter warning */
-        (void)flag;
+	int count = 0;
+	char c;
 
-        /* Retrieve the character from the va_list */
-        c = va_arg(val, int);
-
-        /* Print the character */
-        _putchar(c);
-
-        /* Return the number of characters printed */
-        return 1;
+	while ((c = va_arg(val, int)) != '\0')
+	{
+		if (flag)
+		{
+			putchar(c);
+		}
+		else
+		{
+			putchar(c + 32);
+		}
+		count++;
+	}
+	putchar ('\n');
+	return count;
 }
-
