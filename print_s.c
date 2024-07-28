@@ -52,7 +52,7 @@ size_t size_t_strlen(const char *s)
 
 int _putchar(int c)
 {
-	return (write(int, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
