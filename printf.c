@@ -10,7 +10,8 @@
  * Return: Output result
  */
 
-int _printf(const char *format, ...) {
+int _printf(const char *format, ...)
+{
 	va_list args;
 	int result;
 
