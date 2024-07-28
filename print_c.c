@@ -10,18 +10,19 @@
 
 int _char(va_list val, int flag)
 {
-	/* Suppress unused parameter warning */
-	(void)flag;
+        /* Suppress unused parameter warning */
+        (void)flag;
 
-	/* Declare the variable at the beginning of the block */
-	int c;
+        /* Declare the variable at the beginning of the block */
+        int c;
 
-	/* Retrieve the character from the va_list */
-	c = va_arg(val, int);
+        /* Retrieve the character from the va_list */
+        c = va_arg(val, int);
 
-	/* Print the character */
-	_putchar(c);
+        /* Print the character */
+        _putchar(c);
 
-	/* Return the number of characters printed */
-	return 1;
+        /* Return the number of characters printed */
+        return 1;
 }
+
