@@ -16,21 +16,23 @@ typedef struct specfunc
 	int (*func)(va_list, int);
 } SF;
 
+/* Function prototypes */
+
 int is_string(const char *str);
 int printf_string(va_list val);
 size_t size_t_strlen(const char *s);
 int _putchar(int c);
 void printf_reversed_string(const char *format, const char *str);
 int _printf(const char *format, ...);
-int _putchar(char c);
-int _string(va_list, int);
-int _int(va_list, int);
-int _char(va_list, int);
-int _binary(va_list, int);
+int _string(va_list val, int flag);
+int _int(va_list val, int flag);
+int _char(va_list val, int flag);
+int _binary(va_list val, int flag);
 char *itoa(int i);
-char *reverse(char *);
-char *convert_binary(int);
+char *reverse(char *str);
+char *convert_binary(int num);
 int _strlen(char *str);
 int _strlenc(const char *str);
 int print_37(void);
-#endif
+
+#endif /* MAIN_H */
