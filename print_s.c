@@ -50,7 +50,7 @@ size_t size_t_strlen(const char *s)
  * Return: 1 on success, EOF on failure
  */
 
-int putchar(int c)
+int _putchar(int c)
 {
 	return (write(int, &c, 1));
 }
