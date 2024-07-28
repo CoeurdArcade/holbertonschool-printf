@@ -8,7 +8,7 @@
  * Return: 1.
  */
 
-int printf_char(va_list val)
+int _char(va_list val, int flag)
 {
 	char c;
 
