@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <ctype.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -51,7 +52,7 @@ size_t size_t_strlen(const char *s)
 
 int putchar(int c)
 {
-	return (fwrite(int, int *, 1));
+	return (write(int, &c, 1));
 }
 
 /**
@@ -77,7 +78,7 @@ int printf_string(va_list val)
 		return -1;
 	}
 
-	length = _strlen(str);
+	length = size_t_strlen(str);
 	for (i = 0; i < length; i++)
 	{
 		_putchar(str[i]);
